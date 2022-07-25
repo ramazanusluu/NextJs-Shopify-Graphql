@@ -19,10 +19,10 @@ function Layout({ children }) {
           <Link href="/">
             <a className="font-bold">SHOPIFY</a>
           </Link>
-          <Link href="/collections">
+          <Link href="/collection">
             <a className="font-normal">Collections</a>
           </Link>
-          <Link href="/products">
+          <Link href="/product">
             <a className="font-normal">Products</a>
           </Link>
         </div>

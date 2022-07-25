@@ -4,6 +4,8 @@ import Link from "next/link";
 
 function ProductsList({ products }) {
   console.log("productsList", products);
+  console.log("productsList handle", products.handle);
+
   return (
     <>
       <section className="w-full gap-4 md:gap-8 grid p-6 md:p-8 lg:p-12">
@@ -14,7 +16,7 @@ function ProductsList({ products }) {
           {products.map((product) => {
             return (
               <div key={product.node.id}>
-                <Link href="/">
+                <Link href={`/product/${product.node.handle}`}>
                   <a className="group">
                     <div className="grid gap-4">
                       <Image

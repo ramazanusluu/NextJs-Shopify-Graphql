@@ -3,7 +3,7 @@ import Head from "next/head";
 import { getAllProducts } from "../../lib/shopify";
 import ProductsList from "../../components/ProductsList";
 
-export default function products({ products }) {
+export default function product({ products }) {
   return (
     <>
       <Head>
