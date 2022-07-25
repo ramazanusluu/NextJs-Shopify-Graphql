@@ -9,7 +9,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-3xl font-bold">Next.JS</h1>
+        <h1 className="text-3xl font-bold">Next.JS-Hydrogen</h1>
       </main>
     </div>
   );

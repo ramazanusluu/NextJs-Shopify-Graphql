@@ -12,4 +12,7 @@ const withTM = require("next-transpile-modules")(["@shopify/hydrogen"]);
 
 module.exports = withTM({
   reactStrictMode: true,
+  images: {
+    domains: ["cdn.shopify.com"],
+  },
 });
