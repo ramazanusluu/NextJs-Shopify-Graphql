@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 function CollectionsList({ collections }) {
   console.log("collectionsList ", collections);
@@ -12,17 +13,21 @@ function CollectionsList({ collections }) {
         {collections.map((collection) => {
           return (
             <div key={collection.node.id}>
-              <div className="grid gap-4">
-                <Image
-                  className="rounded shadow-border overflow-clip inline-block aspect-[5/4] md:aspect-[3/2] object-cover"
-                  src={collection.node.image.src}
-                  width={400}
-                  height={400}
-                />
-                <h3 className="mt-4 text-md font-medium  text-center text-black">
-                  {collection.node.title}
-                </h3>
-              </div>
+              <Link href="/">
+                <a className="group">
+                  <div className="grid gap-4">
+                    <Image
+                      className="rounded shadow-border overflow-clip inline-block aspect-[5/4] md:aspect-[3/2] object-cover"
+                      src={collection.node.image.src}
+                      width={400}
+                      height={400}
+                    />
+                    <h3 className="mt-4 text-md font-medium  text-center text-black">
+                      {collection.node.title}
+                    </h3>
+                  </div>
+                </a>
+              </Link>
             </div>
           );
         })}

@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
 import { getAllProducts } from "../../lib/shopify";
+import ProductsList from "../../components/ProductsList";
 
 export default function products({ products }) {
-  console.log("products", products);
   return (
     <>
       <Head>
@@ -12,7 +12,7 @@ export default function products({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Product Page</h1>
+        <ProductsList products={products} />
       </main>
     </>
   );
