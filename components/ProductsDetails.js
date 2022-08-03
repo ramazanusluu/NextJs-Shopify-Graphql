@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
+import { useBasket } from "../contexts/BasketContext";
 
 function ProductsDetails({ product }) {
   console.log("products Detail", product);
   const { originalSrc } = product.product.images.edges[0].node;
 
-  const [card, setCard] = useState([]);
-  console.log("card :", card);
-
   const available = product.product.variants.edges[0].node.availableForSale;
+
+  const { AddToBasket, items } = useBasket();
+
+  const findBasketItem = items.find((item) => item.product.id === product.product.id);
   return (
     <>
       <section className="w-full mt-10 overflow-x-hidden gap-4 md:gap-8 grid px-6 md:px-8 lg:px-12">
@@ -40,9 +42,9 @@ function ProductsDetails({ product }) {
                 </button>
               </div> */}
               {available ? (
-                <button onClick={() => setCard([product])}>
+                <button onClick={() => AddToBasket(product, findBasketItem)}>
                   <span className="bg-black text-white inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none w-full border">
-                    Add To Card
+                    {findBasketItem ? "Remove from Card" : "Add To Card"}
                   </span>
                 </button>
               ) : (

@@ -1,12 +1,15 @@
 import Layout from "../components/Layout";
+import { BasketProvider } from "../contexts/BasketContext";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <BasketProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </BasketProvider>
     </>
   );
 }

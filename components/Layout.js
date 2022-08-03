@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
+import { useBasket } from "../contexts/BasketContext";
 
 function Layout({ children }) {
+  const { items } = useBasket();
   return (
     <div className="flex flex-col min-h-screen antialiased bg-neutral-50">
       <div className="">
@@ -27,9 +29,11 @@ function Layout({ children }) {
           </Link>
         </div>
         <div className="flex gap-12">
-        <Link href="/card">
-            <a className="font-bold">Card</a>
-          </Link>
+          {items.length > 0 && (
+            <Link href="/card">
+              <a className="font-bold">Card ({items.length})</a>
+            </Link>
+          )}
         </div>
       </header>
 
