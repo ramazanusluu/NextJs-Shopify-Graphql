@@ -18,10 +18,18 @@ const BasketProvider = ({ children }) => {
     setItems(filtered);
   };
 
+  //Sepetten ürün silme işlemi için gerekli fonksiyon;
+
+  const removeFromBasket = (item_id) => {
+    const filtered = items.filter((item) => item.product.id !== item_id);
+    setItems(filtered);
+  };
+
   const values = {
     items,
     setItems,
     AddToBasket,
+    removeFromBasket,
   };
 
   return (

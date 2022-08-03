@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { useBasket } from "../contexts/BasketContext";
 
 export default function card() {
-  const { items } = useBasket();
+  const { items, removeFromBasket } = useBasket();
   console.log("items", items);
 
   const router = useRouter();
@@ -67,7 +67,7 @@ export default function card() {
                         {item.product.variants.edges[0].node.priceV2.amount}₺
                       </div>
                     </div>
-                    <button onClick={() => {}}>
+                    <button onClick={() => removeFromBasket(item.product.id)}>
                       <span className="bg-black mt-10 text-white inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none w-full border">
                         Remove from Card
                       </span>
