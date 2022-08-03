@@ -1,6 +1,8 @@
 import Head from "next/head";
+import CollectionsList from "../components/CollectionsList";
+import { getAllCollections } from "../lib/shopify";
 
-export default function Home() {
+export default function Home({ collections }) {
   return (
     <div>
       <Head>
@@ -9,8 +11,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="text-3xl font-bold">Next.JS-Hydrogen</h1>
+        <CollectionsList collections={collections} />
       </main>
     </div>
   );
+}
+export async function getServerSideProps({ context }) {
+  const collections = await getAllCollections(context);
+
+  return {
+    props: { collections },
+  };
 }
