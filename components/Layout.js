@@ -29,11 +29,9 @@ function Layout({ children }) {
           </Link>
         </div>
         <div className="flex gap-12">
-          {items.length > 0 && (
-            <Link href="/card">
-              <a className="font-bold">Card ({items.length})</a>
-            </Link>
-          )}
+          <Link href="/card">
+            <a className="font-bold">Card ({items.length})</a>
+          </Link>
         </div>
       </header>
 
