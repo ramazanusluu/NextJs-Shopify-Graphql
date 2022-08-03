@@ -17,10 +17,17 @@ export default function product({ products }) {
     </>
   );
 }
-export async function getStaticProps() {
-  const products = await getAllProducts();
+// export async function getStaticProps() {
+//   const products = await getAllProducts();
 
+//   return {
+//     props: { products },
+//   };
+// }
+
+export async function getServerSideProps({context}) {
+  const products = await getAllProducts(context)
   return {
     props: { products },
-  };
+  }
 }

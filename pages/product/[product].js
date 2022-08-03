@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import ProductsDetails from "../../components/ProductsDetails";
 import { getProduct } from "../../lib/shopify";
-import { recursiveCatalog } from "../../lib/shopify";
 
 export default function productDetail(product) {
   console.log(product);
@@ -21,25 +20,9 @@ export default function productDetail(product) {
     </>
   );
 }
-export async function getStaticPaths() {
-  const products = await recursiveCatalog();
 
-  const paths = products.map((item) => {
-    const product = String(item.node.handle);
-
-    return {
-      params: { product },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const product = await getProduct(params.product);
+export async function getServerSideProps(context) {
+  const product = await getProduct(context.params.product);
 
   return {
     props: {
@@ -47,3 +30,29 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+// export async function getStaticPaths() {
+//   const products = await recursiveCatalog();
+
+//   const paths = products.map((item) => {
+//     const product = String(item.node.handle);
+
+//     return {
+//       params: { product },
+//     };
+//   });
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// }
+
+// export async function getStaticProps({ params }) {
+//   const product = await getProduct(params.product);
+
+//   return {
+//     props: {
+//       product,
+//     },
+//   };
+// }

@@ -17,8 +17,15 @@ export default function collections({ collections }) {
     </>
   );
 }
-export async function getStaticProps() {
-  const collections = await getAllCollections();
+// export async function getStaticProps() {
+//   const collections = await getAllCollections();
+
+//   return {
+//     props: { collections },
+//   };
+// }
+export async function getServerSideProps({ context }) {
+  const collections = await getAllCollections(context);
 
   return {
     props: { collections },

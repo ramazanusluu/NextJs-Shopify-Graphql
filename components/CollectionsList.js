@@ -13,7 +13,7 @@ function CollectionsList({ collections }) {
         {collections.map((collection) => {
           return (
             <div key={collection.node.id}>
-              <Link href="/">
+              <Link href={`/collection/${collection.node.handle}`}>
                 <a className="group">
                   <div className="grid gap-4">
                     <Image

@@ -29,7 +29,7 @@ function ProductsList({ products }) {
                       <h2 className="whitespace-pre-wrap max-w-prose font-medium text-copy">
                         {product.node.title}
                       </h2>
-                      <h6 className="text-md font-medium text-purple-300">
+                      <h6 className="text-md font-medium text-gray-600">
                         {product.node.priceRange.minVariantPrice.amount} ₺
                       </h6>
                     </div>
