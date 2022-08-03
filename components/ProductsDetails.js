@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 function ProductsDetails({ product }) {
   console.log("products Detail", product);
   const { originalSrc } = product.product.images.edges[0].node;
+
+  const [card, setCard] = useState([]);
+  console.log("card :", card);
+
+  const available = product.product.variants.edges[0].node.availableForSale;
   return (
     <>
       <section className="w-full mt-10 overflow-x-hidden gap-4 md:gap-8 grid px-6 md:px-8 lg:px-12">
@@ -27,13 +32,24 @@ function ProductsDetails({ product }) {
             </div>
 
             <div className="mt-2">
-              <div className="prose border-t border-gray-200 pt-6 text-black text-md">
+              {/* <div className="prose border-t border-gray-200 pt-6 text-black text-md">
                 <button>
                   <span className="bg-black text-white inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none w-full border">
-                    Buy it now
+                    Add To Card
                   </span>
                 </button>
-              </div>
+              </div> */}
+              {available ? (
+                <button onClick={() => setCard([product])}>
+                  <span className="bg-black text-white inline-block rounded-sm font-medium text-center py-3 px-6 max-w-xl leading-none w-full border">
+                    Add To Card
+                  </span>
+                </button>
+              ) : (
+                <button className="rounded-lg text-black px-2 py-3 mt-3 cursor-not-allowed ">
+                  Sold out!
+                </button>
+              )}
             </div>
           </div>
         </div>

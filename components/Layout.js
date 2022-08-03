@@ -26,7 +26,11 @@ function Layout({ children }) {
             <a className="font-normal">Products</a>
           </Link>
         </div>
-        <div className="flex gap-12"></div>
+        <div className="flex gap-12">
+        <Link href="/card">
+            <a className="font-bold">Card</a>
+          </Link>
+        </div>
       </header>
 
       <main role="main" className="container mb-auto">
