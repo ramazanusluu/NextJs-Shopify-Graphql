@@ -6,6 +6,17 @@ const BasketProvider = ({ children }) => {
   //Sepete atılan ürünler items olarak düşünülebilir varsayılan olarak sepette ürün yok
   const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("basket"));
+    if (data) {
+      setItems((prev) => [...prev, ...data]);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("basket", JSON.stringify(items));
+  }, [items]);
+
   //sepete ekleme işlemlerinin yapılabilmesi için gerekli;
 
   const AddToBasket = (data, findBasketItem) => {
