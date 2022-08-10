@@ -1,8 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NEXT.JS-Shopify-Graphql 
 
-## Getting Started
+Shopify GraphQL Storefront API kullanarak geliştirmiş olduğum NEXT.JS projesidir.
 
-First, run the development server:
+### Proje çalıştımadan önce dikkat edilmesi gereken hususlar;
+* Proje'yi development server üzerinden çalıştırmadan önce `npm install` komutu ile gerekli olan node_modules paketlerini yükleyiniz.
+* Proje kök dizininde `.env.local` adında bir dosya oluşturarak shopify accesstoken ve domain bilgilerinizi ekleyiniz.
+```
+SHOPIFY_STOREFRONT_ACCESSTOKEN='##########################'
+SHOPIFY_STORE_DOMAIN='######################'
+```
+
+Projeyi development server üzerinden çalıştırmak için aşağıdaki komutları kullanınız.
 
 ```bash
 npm run dev
@@ -10,25 +18,39 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tarayıcınızda [http://localhost:3000](http://localhost:3000) adresine giderek sonucu görebilirsiniz. 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Daha fazla bilgi edinin
+Next.js hakkında daha fazla bilgi edinmek için aşağıdaki kaynaklara göz atın:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- [Next.js Documentation](https://nextjs.org/docs) -  Next.js özellikleri ve API hakkında bilgi edinin.
+- [Learn Next.js](https://nextjs.org/learn) -  etkileşimli bir Next.js öğreticisi.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Proje Görselleri
+### Ana Sayfa üzerinde
+* Navbar
+* Shopify mağzasında oluşturulan ve içerisine ürünler eklenen collection'lar
+* Footer
 
-## Learn More
+Yer almaktadır.
+![Ekran Görüntüsü (175)](https://user-images.githubusercontent.com/98388628/184003274-de169123-5a07-4217-a338-2e5195d27b81.png)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ Ana Sayfa üzerinde bulunan veya Navbar üzerinden ulaşılan collection'lara tıklanıldığında ilgili ürünler listelenir.
+![image](https://user-images.githubusercontent.com/98388628/184005751-c6e020a4-10b2-4ad8-83cc-fbbcd1491b17.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+### Navbar üzerinde bulunan Products butonuna tıklanıldığında ise tüm ürünlerin listelendiği sayfaya yönlendirilir.
+![Ekran Görüntüsü (177)](https://user-images.githubusercontent.com/98388628/184006251-5610dde1-baf0-4fb4-80df-9d0fb6395639.png)
+![Ekran Görüntüsü (178)](https://user-images.githubusercontent.com/98388628/184006190-bd3eaddc-533c-44a1-956f-e9dc5eb4fa57.png)
+![Ekran Görüntüsü (179)](https://user-images.githubusercontent.com/98388628/184006281-6e24c62b-744b-4009-acc8-8906b702fa94.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Ürünler üzerine tıklandığında ürün detay sayfalarına yönlendirilme işlemi gerçekleştirilir.
+![image](https://user-images.githubusercontent.com/98388628/184006671-d8a31af2-cbcd-41bc-b71a-1a418cc89caf.png)
+
+ Ürün detay sayfasında bulunan Add To Card butonu ile ürünler Card'a eklenir.
+![image](https://user-images.githubusercontent.com/98388628/184006929-eb882b95-18bc-4bb2-ae90-0efd10d50457.png)
+![image](https://user-images.githubusercontent.com/98388628/184007094-9d09437d-3f3b-482c-87d7-a0ad5d2af52e.png)
+
+
