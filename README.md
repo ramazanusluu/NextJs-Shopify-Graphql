@@ -1,6 +1,6 @@
 # NEXT.JS-Shopify-Graphql 
 
-Shopify GraphQL Storefront API kullanarak geliştirmiş olduğum NEXT.JS projesidir.
+Shopify GraphQL Storefront API ve Tailwind Css kullanarak geliştirmiş olduğum NEXT.JS projesidir.
 
 ### Proje çalıştımadan önce dikkat edilmesi gereken hususlar;
 * Proje'yi development server üzerinden çalıştırmadan önce `npm install` komutu ile gerekli olan node_modules paketlerini yükleyiniz.
